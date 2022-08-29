@@ -6,19 +6,19 @@
 /*   By: nspeedy <nspeedy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 14:20:39 by nspeedy           #+#    #+#             */
-/*   Updated: 2022/08/25 15:51:39 by nspeedy          ###   ########.fr       */
+/*   Updated: 2022/08/26 14:08:58 by nspeedy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_CLASS_H
-# define CONTACT_CLASS_H
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
 #include <iostream>
 #include <string>
 
 class Contact
 {
-	private:
+	private: //These strings store the user input for each input variable
 			std::string		_FirstName;
 			std::string		_LastName;
 			std::string		_NickName;

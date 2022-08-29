@@ -6,7 +6,7 @@
 /*   By: nspeedy <nspeedy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 13:48:43 by nspeedy           #+#    #+#             */
-/*   Updated: 2022/08/25 16:46:34 by nspeedy          ###   ########.fr       */
+/*   Updated: 2022/08/26 15:05:56 by nspeedy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	PhoneBook::prompt()
 {
-	std::cout << "/******************************************/\n\t\tMENU OPTIONS" << std::endl;
-	std::cout << "\t\t-\tADD\n\t\t-\tSEARCH\n\t\t-\tEXIT" << std::endl;
+	std::cout << "/************PHONEBOOK OPTIONS*************/" << std::endl;
+	std::cout << "\t\t-ADD\n\t\t-SEARCH\n\t\t-EXIT" << std::endl;
 	std::cout << "/******************************************/" << std::endl;
 }
 
@@ -25,6 +25,7 @@ void	PhoneBook::add()
 	std::string	input;
 
 	if (i == 8)
+		i = 0;
 	std::cout << "/******************************************/" << std::endl;
 	_contacts[i].theFirstName(&input);
 	_contacts[i].theLastName(&input);

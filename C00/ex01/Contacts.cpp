@@ -6,13 +6,15 @@
 /*   By: nspeedy <nspeedy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 14:03:10 by nspeedy           #+#    #+#             */
-/*   Updated: 2022/08/25 16:36:26 by nspeedy          ###   ########.fr       */
+/*   Updated: 2022/08/26 14:14:42 by nspeedy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //Contact fields are: First name, Last name, nickname, phone number, darkest secret
 
 #include "Contacts.hpp"
+
+//Prototypes of the functions in the Contact class
 
 std::string Contact::theFirstName() { return (_FirstName); }
 
@@ -24,6 +26,11 @@ std::string Contact::thePhoneNumber() { return (_PhoneNumber); }
 
 std::string Contact::theDarkestSecret() { return (_DarkestSecret); }
 
+/* The functions below set the data for each contact added - 
+	first clearing anything in the class string storing the input - 
+	then the while loop makes sure that there is an input so no field can be empty -
+	then asks user for an input which is captured by getline and stored in the string - 
+	then clearing the input variable */
 
 void	Contact::theFirstName(std::string *input)
 {
