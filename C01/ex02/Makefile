@@ -1,6 +1,6 @@
-NAME = zom
+NAME = ref
 
-SRC = Zombie.cpp main.cpp newZombie.cpp randomChump.cpp
+SRC = main.cpp
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
@@ -8,9 +8,8 @@ all: $(NAME)
 		
 $(NAME): $(OBJ)
 		@clear
-		@echo "Brainz"
 		@c++ $(FLAGS) $(SRC) -o $(NAME)
-		@echo "The dead are rising"
+
 
 clean:
 		@clear

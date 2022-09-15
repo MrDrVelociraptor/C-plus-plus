@@ -1,37 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nspeedy <nspeedy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/29 10:23:34 by nspeedy           #+#    #+#             */
-/*   Updated: 2022/08/29 16:53:35 by nspeedy          ###   ########.fr       */
+/*   Created: 2022/08/29 10:30:05 by nspeedy           #+#    #+#             */
+/*   Updated: 2022/08/29 16:55:28 by nspeedy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#include "Zombie.hpp"
 
-#include <iostream>
-#include <string>
+Zombie::Zombie(){}
 
-class Zombie
+Zombie::Zombie(std::string name)
 {
-	private:
-		std::string	name;
-	
-	public:
-		Zombie(std::string name);
-		~Zombie(void);
+	this->name = name;
+}
 
-		void	annouce(void);
-};
+Zombie::~Zombie()
+{
+	std::cout << this->name << " of the undead zombie legions has been put to rest" << std::endl;
+}
 
-void	randomChump(std::string name);
-Zombie* newZombie(std::string name);
+void	Zombie::annouce(void)
+{
+	std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+}
 
-
-
-
-#endif
+void	Zombie::hordeName(std::string name)
+{
+	this->name = name;
+}

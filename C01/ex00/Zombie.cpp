@@ -13,9 +13,9 @@
 #include "Zombie.hpp"
 
 
-Zombie::Zombie(void)
+Zombie::Zombie(std::string name)
 {
-	return ;
+	this->name = name;
 }
 
 Zombie::~Zombie()
@@ -26,10 +26,4 @@ Zombie::~Zombie()
 void	Zombie::annouce(void)
 {
 	std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
-
-void	Zombie::nameZombie(std::string *input)
-{
-	getline(std::cin, *input);
-
 }
