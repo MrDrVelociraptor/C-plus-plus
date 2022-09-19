@@ -1,6 +1,6 @@
-NAME = humans
+NAME = fix
 
-SRC = HumanA.cpp HumanB.cpp Weapon.cpp main.cpp
+SRC = Fixed.cpp main.cpp
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 

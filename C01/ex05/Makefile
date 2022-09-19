@@ -1,6 +1,6 @@
-NAME = humans
+NAME = harl
 
-SRC = HumanA.cpp HumanB.cpp Weapon.cpp main.cpp
+SRC = Harl.cpp main.cpp
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 

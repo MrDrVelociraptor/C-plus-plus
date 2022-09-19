@@ -1,6 +1,6 @@
-NAME = humans
+NAME = sed
 
-SRC = HumanA.cpp HumanB.cpp Weapon.cpp main.cpp
+SRC = main.cpp
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
