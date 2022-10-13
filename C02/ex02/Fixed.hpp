@@ -18,10 +18,10 @@ public:
 	Fixed(const float f);
 	~Fixed(void);
 
-	int		getRawBits(void) const;
-	void	setRawBits(int const raw);
-	float	toFloat(void) const;
-	int		toInt(void) const;
+	int		getRawBits( void ) const;
+	void	setRawBits( int const raw );
+	float	toFloat( void ) const;
+	int		toInt( void ) const;
 
 	Fixed &operator=(const Fixed &copy);
 
@@ -49,9 +49,9 @@ public:
 
 	float	operator -- ( void );
 
-	int		operator ++ ( int );
+	Fixed		operator ++ ( int );
 
-	int		operator -- ( int );
+	Fixed		operator -- ( int );
 
 	Fixed	static &min( Fixed &obj1, Fixed &obj2 );
 
