@@ -13,12 +13,21 @@ private:
 
 
 public:
-	ClapTrap(std::string name);
+	ClapTrap( void );
+	ClapTrap( std::string name );
+	ClapTrap( const ClapTrap &copy );
 	~ClapTrap();
+
+	std::string	getName ( void ) const;
 
 	void attack( const std::string& target);
 	void takeDamage( unsigned int amount );
 	void beRepaired( unsigned int amount );
+
+	int	getHitPoints ( void ) const;
+	int	getEnergyPoints ( void ) const;
+	int	getAttackDmg ( void ) const;
+
 };
 
 

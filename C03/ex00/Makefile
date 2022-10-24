@@ -1,6 +1,6 @@
 NAME = TheClap
 
-SRC = ClapTrap.cpp ClapTrap.hpp main.cpp
+SRC = ClapTrap.cpp main.cpp
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 

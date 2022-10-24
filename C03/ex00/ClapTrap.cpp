@@ -11,15 +11,32 @@ ClapTrap::~ClapTrap()
 
 }
 
-void	attack( const std::string& target) {
-	std::cout << "The Clap is infecting " << target << ", dealing " << _attackDamage <<  std::endl;
+std::string	ClapTrap::getName( void ) const {
+	return (this->_name);
+}
+
+int	ClapTrap::getHitPoints ( void ) const {
+	return (this->_hitPoints);
+}
+
+int	ClapTrap::getEnergyPoints ( void ) const {
+	return (this->_energyPoints);
+}
+
+int	ClapTrap::getAttackDmg ( void ) const {
+	return (this->_attackDamage);
+}
+
+void	ClapTrap::attack( const std::string& target) {
+	std::cout << "The Clap is infecting " << target << ", dealing " << ClapTrap::getAttackDmg() <<  std::endl;
 
 }
 
-void	takeDamage( unsigned int amount) {
-
+void	ClapTrap::takeDamage( unsigned int amount) {
+	std::cout << "The Clap, " << this->_name << "is having an adverse reaction to antibiotics causing  " << amount << " damage" << std::endl;
 }
 
-void	beRepaired( unsigned int amount) {
+void	ClapTrap::beRepaired( unsigned int amount) {
+	std::cout << "The Clap, " << this->_name << "is taking antiboitics and heals " << amount << " HP" << std::endl;
 
 }
