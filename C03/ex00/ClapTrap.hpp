@@ -6,7 +6,6 @@
 #include <stdlib.h>
 #include <time.h>
 
-
 class ClapTrap
 {
 private:
