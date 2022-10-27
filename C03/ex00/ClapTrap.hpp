@@ -2,6 +2,10 @@
 #define CLAPTRAP_HPP
 
 #include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
 
 class ClapTrap
 {
@@ -20,7 +24,7 @@ public:
 
 	std::string	getName ( void ) const;
 
-	void attack( const std::string& target);
+	void attack( const std::string& target );
 	void takeDamage( unsigned int amount );
 	void beRepaired( unsigned int amount );
 
@@ -29,6 +33,8 @@ public:
 	int	getAttackDmg ( void ) const;
 
 };
+
+ClapTrap* buildClap(std::string _name);
 
 
 
