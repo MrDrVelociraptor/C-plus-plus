@@ -1,5 +1,10 @@
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap(void)
+{
+	/* NO DATA */
+}
+
 ClapTrap::ClapTrap(std::string _name): _name(_name), _hitPoints(10), _energyPoints(10), _attackDamage(4) 
 {
 	std::cout << "\033[1;33m//****************SPAWN******************//\033[0m" << std::endl;
@@ -59,12 +64,13 @@ void	ClapTrap::attack( const std::string& target) {
 
 void	ClapTrap::takeDamage( unsigned int amount) {
 	std::cout << "\033[1;32m//********************DAMAGE*******************//\033[0m" << std::endl;
+	std::cout << "\033[1;32m//***	" << this->_name << " has " << this->_hitPoints << " hit points left " << "      ***//\033[0m" << std::endl;
+
 	std::cout << "\033[1;32m//***	" << this->_name << " takes " << amount << " damage " << "            ***//\033[0m" << std::endl;
 	this->_hitPoints -= amount;
 	std::cout << "\033[1;32m//***	" << this->_name << " has " << this->_hitPoints << " hit points left" << "     ***//\033[0m" << std::endl;
 	if (this->_hitPoints <= 0) {
 		std::cout << "\033[1;32m " << this->_name << " has succumbed to infection 3...2...1 💥\033[0m" << std::endl;
-		delete (this);
 		return ;
 	}
 	std::cout << "\033[1;32m//*********************************************//\033[0m" << std::endl;	
