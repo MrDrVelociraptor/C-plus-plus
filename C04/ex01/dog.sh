@@ -1,0 +1,1 @@
+afplay -t 1 bark.mp3

@@ -29,7 +29,7 @@ FragTrap::FragTrap(std::string _name): ClapTrap(_name)
 
 FragTrap::~FragTrap()
 {
-	std::cout << "\033[1;33m//***	" << this->_name << " has finished scavenging  ***//\033[0m" << std::endl;
+	std::cout << "\033[1;33m//***	" << this->_name << " has finished doing whatever FragTraps do  ***//\033[0m" << std::endl;
 	return ;
 }
 
@@ -41,7 +41,7 @@ FragTrap* buildFrag(std::string _name) {
 void	FragTrap::attack( const std::string& target) {
 	if (this->_energyPoints > 0 && this->_hitPoints > 0) {
 		std::cout << "\033[1;31m//*************************ATTACK***************************//\033[0m" << std::endl;
-		std::cout << "\033[1;31m//*** " << this->_name << " SCAVATTACKS " << target << ", dealing " << this->_attackDamage << " damage " << "  ***//\033[0m" << std::endl;
+		std::cout << "\033[1;31m//*** " << this->_name << " FRAGATTACKS " << target << ", dealing " << this->_attackDamage << " damage " << "  ***//\033[0m" << std::endl;
 		this->_energyPoints -= 1;
 		std::cout << "\033[1;31m//***\033[0m " << "\033[1;34m" << "Attacking costs 1 energy \033[0m" << "\033[1;31m             	         ***//\033[0m" << std::endl;
 		std::cout << "\033[1;31m//***\033[0m " << "\033[1;34m" << this->_name << " has " << this->_energyPoints << " remaining" << " energy points\033[0m" << "\033[1;31m             ***//\033[0m" << std::endl;
