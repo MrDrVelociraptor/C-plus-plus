@@ -89,4 +89,12 @@ std::ostream	&operator << ( std::ostream &stream, const Form &form) {
 	return (stream);
 }
 
+void Form::setTarget( std::string target ) {
+	this->_target = target;
+}
+
+std::string Form::getTarget( void ) const {
+	return (this->_target);
+}
+
 // Form&	Form::operator=(const Form& assign) {}
