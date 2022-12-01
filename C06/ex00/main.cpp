@@ -8,6 +8,7 @@ int	main( void ) {
 	std::cin >> input;
 	Converter convo(input);
 	convo.checkInput();
+	// convo.cToInt()
 	// convo.cConvert();
 	return (0);
 }
