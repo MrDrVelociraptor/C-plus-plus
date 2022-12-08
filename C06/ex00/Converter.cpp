@@ -30,59 +30,93 @@ std::string Converter::getInput( void ) const {
 	return (this->_input);
 }
 
-void	Converter::checkF( void ) {
-	for (int i = 0; i < n; i++) {
-		if (this->_input[i] == '.') {
+double	Converter::checkF( int n ) 
+{
+	double doubly = 0;
+	for (int i = 0; i < n; i++) 
+	{
+		if (this->_input[i] == '.') 
+		{
 			i = 0;
-			for (i = 0; i < n; i++) {
-				if (this->_input[i] == 'f') {
+			for (i = 0; i < n; i++) 
+			{
+				if (this->_input[i] == 'f') 
+				{
 					std::cout << "\033[1;34m//******Input String is FLOAT******//\033[0m" << std::endl;
-					this->_isFloaty = true;
+					doubly = atof(_input.c_str());
+					this->_doubly = doubly;
+					std::cout << "\033[1;34m//******DOUBLE  = " << this->_doubly << "******//\033[0m" << std::endl;
+					this->_floaty = true;
+					this->_inty = (int)(doubly);
+					this->_floaty = (float)(doubly);
+					this->_chary = (char)(doubly);
+					std::cout << "\033[1;34m//******DOUBLE conversion to int = " << this->_inty << "******//\033[0m" << std::endl;
+					std::cout << "\033[1;34m//******DOUBLE conversion to double = " << this->_floaty << "******//\033[0m" << std::endl;
+					std::cout << "\033[1;34m//******DOUBLE conversion to char = " << this->_chary << "******//\033[0m" << std::endl;
+					return (doubly);
+				}
 			}
-					
+			if (this->_floaty == false)
+			{
+				std::cout << "\033[1;34m//******Input String is DOUBLE******//\033[0m" << std::endl;
+				this->_inty = (int)(doubly);
+				this->_floaty = (float)(doubly);
+				this->_chary = (char)(doubly);
+				std::cout << "\033[1;34m//******DOUBLE conversion to int = " << this->_inty << "******//\033[0m" << std::endl;
+				std::cout << "\033[1;34m//******DOUBLE conversion to double = " << this->_floaty << "******//\033[0m" << std::endl;
+				std::cout << "\033[1;34m//******DOUBLE conversion to char = " << this->_chary << "******//\033[0m" << std::endl;
+				return ((float)doubly);
+			}		
 		}
 	}
+	return (0);
 }
 
 void	Converter::checkInput( void ) {
 	std::cout << "\033[1;34m//******Input String Check******//\033[0m" << std::endl;
-	// int 	j;
+	int 	j;
 	int 	n = this->_input.length();
-	if ((this->_input[0] == '-' && (isdigit(this->_input[1]) || this->_input[1] == '.')) || (isdigit(this->_input[0]) || this->_input[1] == '.')) {
-		std::cout << "\033[1;34m//****** Input string length = " << n << "******//\033[0m" << std::endl;
-
-		
-			else {
-				std::cout << "\033[1;34m//******Input String is DOUBLE******//\033[0m" << std::endl;
-				this->_isDoubly = true;
-			}
+	if  ((this->_input[0] == '-' && isdigit(this->_input[1])) || (isdigit(this->_input[0]))) 
+	{
+		for (j = 0; (isdigit(this->_input[j])) && j <= n; j++) 
+		{
+			std::cout << "\033[1;31m//******INT CHECK******//\033[0m" << std::endl;
+			std::cout << "\033[1;31m" << "j = " << j << " ****** n = " << n << "\033[0m" << std::endl;
+		}
+		if (j == n) 
+		{
+			std::cout << "\033[1;34m//******Input String is INT******//\033[0m" << std::endl;
+			std::cout << "\033[1;34m//****** Input String = \033[0m" << this->_input << "\033[1;31m INT\033[0m" << std::endl;
+			std::cout << "\033[1;34m//******Int Conversion Started******//\033[0m" << std::endl;
+			this->_isInt = true;
+			this->_inty = atoi(this->_input.c_str());
+			std::cout << "\033[1;34m//******INT = " << this->_inty << "******//\033[0m" << std::endl;
+			std::cout << "\033[1;34m//******Int Input Converted******//\033[0m" << std::endl;
+		}
+		if (this->_isInt == true)
+		{
+			this->_doubly = (double)(this->_inty);
+			this->_floaty = (float)(this->_inty);
+			this->_chary = (char)(this->_inty);
+			// std::cout << this->_chary << std::endl;
+			std::cout << "\033[1;34m//******INT conversion to double = " << this->_doubly << "******//\033[0m" << std::endl;
+			std::cout << "\033[1;34m//******INT conversion to float = " << this->_floaty << "******//\033[0m" << std::endl;
+			std::cout << "\033[1;34m//******INT conversion to char = " << this->_chary << "******//\033[0m" << std::endl;
+		}
+		if (this->_isInt == false)
+		{
+			checkF(n);
 		}
 	}
-	
-	// if  ((this->_input[0] == '-' && isdigit(this->_input[1])) || (isdigit(this->_input[0]))) {
-	// 	for (j = 0; (isdigit(this->_input[j])) && j <= n; j++) {
-	// 		std::cout << "\033[1;31m//******INT CHECK******//\033[0m" << std::endl;
-	// 		std::cout << "\033[1;31m" << "j = " << j << " ****** n = " << n << "\033[0m" << std::endl;
-	// 	}
-	// 	if (j == n) {
-	// 		std::cout << "\033[1;34m//******Input String is INT******//\033[0m" << std::endl;
-	// 		std::cout << "\033[1;34m//****** Input String = \033[0m" << this->_input << "\033[1;31m INT\033[0m" << std::endl;
-	// 		std::cout << "\033[1;34m//******Int Conversion Started******//\033[0m" << std::endl;
-	// 		this->_isInt = true;
-	// 		this->_inty = atoi(this->_input.c_str());
-	// 		std::cout << "\033[1;34m//******INT = " << this->_inty << "******//\033[0m" << std::endl;
-	// 		std::cout << "\033[1;34m//******Int Input Converted******//\033[0m" << std::endl;
-	// 		}
-	// 	}
-	// }
-	// else if ((isprint(this->_input[0])) && !(isdigit(this->_input[0]))) {
-	// 	std::cout << "\033[1;34m//******Input String is printable CHAR******//\033[0m" << std::endl;
-	// 	std::cout << "\033[1;34m//****** Input String = \033[0m" << this->_input << "\033[1;31m CHARACTER\033[0m" << std::endl;
-	// 	std::cout << "\033[1;34m//******Input String Checked******//\033[0m" << std::endl;
-	// 	cToAll(cConvert());
-	// }
-	
+	else if ((isprint(this->_input[0])) && !(isdigit(this->_input[0]))) 
+	{
+		std::cout << "\033[1;34m//******Input String is printable CHAR******//\033[0m" << std::endl;
+		std::cout << "\033[1;34m//****** Input String = \033[0m" << this->_input << "\033[1;31m CHARACTER\033[0m" << std::endl;
+		std::cout << "\033[1;34m//******Input String Checked******//\033[0m" << std::endl;
+		cToAll(cConvert());
+	}
 }
+
 
 char	Converter::cConvert( void ) {
 	int 	n = this->_input.length();

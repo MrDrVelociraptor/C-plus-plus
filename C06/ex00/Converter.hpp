@@ -24,8 +24,9 @@ class Converter {
 
 		void	checkInput( void );
 		char	cConvert( void );
-		void		cToAll( char c );
-		void	checkF( void );
+		void	cToAll( char c );
+		double	checkF( int n );
+
 		// int		iConvert( std::string input );
 		// double	dConvert( std::string input );
 		// float	fConvert( std::string input );
