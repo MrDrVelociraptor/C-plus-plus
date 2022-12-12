@@ -3,6 +3,17 @@
 
 #include <iostream>
 #include <string>
+#include <cstring>
+#include <cstdlib>
+#include <iomanip>
+#include <sstream>
+#include <stdlib.h>
+#include <math.h>
+
+
+#define MAX 2147483647
+#define MIN -2147483648
+
 
 class Converter {
 	public:
@@ -13,23 +24,22 @@ class Converter {
 
 		char		_chary;
 		int			_inty;
-		bool		_isInt;
 		double		_doubly;
-		bool		_isDoubly;
 		float		_floaty;
-		bool		_isFloaty;
+
 		std::string	_input;
 
+		bool	goodPut( void );
 		std::string	getInput( void ) const;
 
-		void	checkInput( void );
+		// void	checkInput( void );
+		// void	checkFD( int n );
+		
+		double	dConvert( void );
+		float	fConvert( void );
+		int		iConvert( void );
 		char	cConvert( void );
-		void	cToAll( char c );
-		double	checkF( int n );
-
-		// int		iConvert( std::string input );
-		// double	dConvert( std::string input );
-		// float	fConvert( std::string input );
+		
 
 		class Unconvertable: public std::exception {
 			char const *what(void) const throw();
